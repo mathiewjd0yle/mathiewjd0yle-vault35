@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_A,    KC_S,    MT(MOD_LSFT, KC_D),    MT(MOD_LCTL, KC_F),    KC_G,    KC_H,    MT(MOD_LCTL, KC_J),    MT(MOD_LSFT, KC_K),    KC_L,    KC_SCLN,
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-         KC_LSFT,      KC_LCTL, LT(NUM,KC_ENTER),  LT(NUM,KC_SPACE),   KC_LALT, KC_LEFT_GUI
+         KC_LSFT,      KC_LCTL, LT(NUM,KC_SPACE),  LT(NUM,KC_SPACE),   KC_LALT, KC_LEFT_GUI
   ),
 
   [NUM] = LAYOUT_split_4space(
@@ -80,10 +80,12 @@ combo_t key_combos[] = {
   
 };
 
+
+
 void keyboard_post_init_user(void) {
-    rgblight_enable(); 
+    rgblight_enable(); // Enable RGB lighting
     rgblight_mode(RGBLIGHT_MODE_RAINBOW_MOOD); 
-    rgblight_sethsv(RGBLIGHT_MODE_RAINBOW_MOOD); 
+    rgblight_sethsv(HSV_WHITE); 
 }
 
 
